@@ -1,1 +1,6 @@
-/build
+
+/build/generated/source/buildConfig/debug/com/example/tictac/
+/build/intermediates/
+/build/kotlin/compileDebugKotlin/
+/build/outputs/logs/
+/build/tmp/kotlin-classes/debug/
