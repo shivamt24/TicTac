@@ -78,8 +78,13 @@ class MainActivity : AppCompatActivity() {
 
         winner = checkPlzyer(winner)
 
-        if (winner == -1) return
-
+        if (winner == -1) {
+            if(PlayerFirst.size + Player2.size == 9){
+                Toast.makeText(this, "Game Draw", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+            return
+        }
         when (winner) {
             1 -> Toast.makeText(this, "Player 1 Won", Toast.LENGTH_LONG).show()
             2 -> Toast.makeText(this, "player 2 Won", Toast.LENGTH_LONG).show()
