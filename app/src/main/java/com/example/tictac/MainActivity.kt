@@ -7,6 +7,7 @@ package com.example.tictac
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -32,20 +33,19 @@ class MainActivity : AppCompatActivity() {
         buSelected.text = "Pressed"
         var cellId: Int = 0
         when (buSelected.id) {
-            R.id.bu1 -> cellId = 1
-            R.id.bu2 -> cellId = 2
-            R.id.bu3 -> cellId = 3
-            R.id.bu4 -> cellId = 4
-            R.id.bu5 -> cellId = 5
-            R.id.bu6 -> cellId = 6
-            R.id.bu7 -> cellId = 7
-            R.id.bu8 -> cellId = 8
-            R.id.bu9 -> cellId = 9
+            R.id.b00 -> cellId = 1
+            R.id.b01 -> cellId = 2
+            R.id.b02 -> cellId = 3
+            R.id.b10 -> cellId = 4
+            R.id.b11 -> cellId = 5
+            R.id.b12 -> cellId = 6
+            R.id.b20 -> cellId = 7
+            R.id.b21 -> cellId = 8
+            R.id.b22 -> cellId = 9
         }
 
 //        Toast.makeText(this, "selected: $cellId", Toast.LENGTH_SHORT).show()
         playGame(cellId, buSelected)
-
     }
 
     private var PlayerFirst = ArrayList<Int>()
@@ -78,20 +78,19 @@ class MainActivity : AppCompatActivity() {
 
         winner = checkPlzyer(winner)
 
-        if (winner == -1) {
-            if(PlayerFirst.size + Player2.size == 9){
-                Toast.makeText(this, "Game Draw", Toast.LENGTH_LONG).show()
-                startActivity(Intent(this, MainActivity::class.java))
-            }
-            return
-        }
         when (winner) {
-            1 -> Toast.makeText(this, "Player 1 Won", Toast.LENGTH_LONG).show()
-            2 -> Toast.makeText(this, "player 2 Won", Toast.LENGTH_LONG).show()
+            -1 -> {
+                     if(PlayerFirst.size + Player2.size == 9){
+                         Toast.makeText(this, "Game Draw", Toast.LENGTH_LONG).show()
+                     }
+                     else {
+                         return
+                     }
+                   }
+            1 -> Toast.makeText(this, "Player 1 Wins", Toast.LENGTH_LONG).show()
+            2 -> Toast.makeText(this, "Player 2 Wins", Toast.LENGTH_LONG).show()
         }
-
         startActivity(Intent(this, MainActivity::class.java))
-
     }
 
     private fun checkPlzyer(winner: Int): Int {
@@ -117,5 +116,5 @@ class MainActivity : AppCompatActivity() {
         }
         return winner1
     }
-
 }
+
