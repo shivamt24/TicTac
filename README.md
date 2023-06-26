@@ -36,8 +36,7 @@ Tests are not included yet.
 This project is open to contribute and share or personal use
 
 ## Authors
-
-* **Shivam Thabe** - *Initial work*
+* **Shivam Thabe** - *Backend* - [Website](https://shivamthabe.me) [Twitter](https://twitter.com/ShivamThabe) 
 * **Akshay Sangma** - *User Interface*
 * **Kasuhik Burkule** - *Version Control* - [Twitter](https://twitter.com/KaushikBurkule)
 
